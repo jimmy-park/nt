@@ -7,8 +7,8 @@ Abbreviated form of fixed-width numeric types in C++ (inspired by Rust)
 ~~I'm sick of writing things like `std::uint32_t` even in hobby projects~~
 
 - Integer types
-  - Unsigned : `u8`, `u16`, `u32`, `u64`, `usize`
-  - Signed : `i8`, `i16`, `i32`, `i64`, `isize`
+  - Unsigned : `u8`, `u16`, `u32`, `u64`, `u128`, `usize`
+  - Signed : `i8`, `i16`, `i32`, `i64`, `i128`, `isize`
 - Floating-point types (IEEE 754)
   - `f32`, `f64`
 
@@ -49,4 +49,5 @@ target_link_libraries(main PRIVATE number::number)
 ## Reference
 
 - [Data Types - The Rust Programming Language](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+- [P0330: Literal Suffix for (signed) size_t](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p0330r8.html)
 - [P1227: Signed ssize() functions, unsigned size() functions](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1227r2.html)
