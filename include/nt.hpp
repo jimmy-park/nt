@@ -10,9 +10,11 @@
 #include <__msvc_int128.hpp>
 using u128 = std::_Unsigned128;
 using i128 = std::_Signed128;
-#else
+#elif defined(__SIZEOF_INT128__)
 using u128 = __uint128_t;
 using i128 = __int128_t;
+#else
+#warning "128-bit integer types are not supported"
 #endif
 
 using u8 = std::uint8_t;
