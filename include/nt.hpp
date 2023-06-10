@@ -1,5 +1,5 @@
-#ifndef NUMBER_HPP_
-#define NUMBER_HPP_
+#ifndef NT_HPP_
+#define NT_HPP_
 
 #include <cstddef>
 #include <cstdint>
@@ -30,4 +30,4 @@ using isize = std::common_type_t<std::ptrdiff_t, std::make_signed_t<usize>>;
 using f32 = float;
 using f64 = double;
 
-#endif // NUMBER_HPP_
+#endif // NT_HPP_

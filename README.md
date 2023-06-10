@@ -1,6 +1,6 @@
-# number
+# nt
 
-[![CI](https://github.com/jimmy-park/number/actions/workflows/ci.yaml/badge.svg)](https://github.com/jimmy-park/number/actions/workflows/ci.yaml)
+[![CI](https://github.com/jimmy-park/nt/actions/workflows/ci.yaml/badge.svg)](https://github.com/jimmy-park/nt/actions/workflows/ci.yaml)
 
 Abbreviated form of fixed-width numeric types in C++ (inspired by Rust)
 
@@ -15,7 +15,7 @@ Abbreviated form of fixed-width numeric types in C++ (inspired by Rust)
 ## Usage
 
 ```cpp
-#include <number.hpp>
+#include <nt.hpp>
 
 u32 add(u32 a, u32 b)
 {
@@ -31,19 +31,19 @@ Require CMake 3.23+ due to `target_sources(FILE_SET)`
 include(FetchContent)
 
 FetchContent_Declare(
-    number
-    URL https://github.com/jimmy-park/number/archive/main.tar.gz
+    nt
+    URL https://github.com/jimmy-park/nt/archive/main.tar.gz
 )
-FetchContent_MakeAvailable(number)
+FetchContent_MakeAvailable(nt)
 
 # If you're using CPM.cmake
 # CPMAddPackage(
-#     NAME number
-#     URL https://github.com/jimmy-park/number/archive/main.tar.gz
+#     NAME nt
+#     URL https://github.com/jimmy-park/nt/archive/main.tar.gz
 # )
 
 add_executable(main main.cpp)
-target_link_libraries(main PRIVATE number::number)
+target_link_libraries(main PRIVATE nt::nt)
 ```
 
 ## Reference

@@ -9,7 +9,7 @@
 #include <string>
 #include <typeinfo>
 
-#include <number.hpp>
+#include <nt.hpp>
 
 template <typename T>
 concept Assignment = requires(T a, T b) {
