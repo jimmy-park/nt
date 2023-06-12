@@ -2,15 +2,31 @@
 
 [![CI](https://github.com/jimmy-park/nt/actions/workflows/ci.yaml/badge.svg)](https://github.com/jimmy-park/nt/actions/workflows/ci.yaml)
 
-Abbreviated form of fixed-width numeric types in C++ (inspired by Rust)
+Abbreviated form of fixed width numeric types in C++ (inspired by Rust)
 
 ~~I'm sick of writing things like `std::uint32_t` even in hobby projects~~
 
-- Integer types
-  - Unsigned : `u8`, `u16`, `u32`, `u64`, `u128`, `usize`
-  - Signed : `i8`, `i16`, `i32`, `i64`, `i128`, `isize`
-- Floating-point types (IEEE 754)
-  - `f32`, `f64`
+## Supported Types
+
+| Bits | Signed | Unsigned | Floating-point |
+| --- | --- | --- | --- |
+| `8` | `i8` | `u8` | |
+| `16` | `i16` | `u16` | |
+| `32` | `i32` | `u32` | `f32` |
+| `64` | `i64` | `u64` | `f64` |
+| `128` | `i128` | `u128` | |
+| `arch` | `isize` | `usize` | |
+
+### Notes
+
+- Floating-point types
+  - They are actually `float` and `double` (IEEE 754)
+  - Since C++23, we can use extended types defined in `<stdfloat>`
+- 128-bit integer types
+  - Use a compiler extension `__int128` on GCC/Clang
+  - Use an experimental `<__msvc_int128.hpp>` on MSVC
+- `isize`
+  - May be wider than `usize` on some platforms
 
 ## Usage
 
@@ -49,5 +65,7 @@ target_link_libraries(main PRIVATE nt::nt)
 ## Reference
 
 - [Data Types - The Rust Programming Language](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+- [Fixed width integer types (since C++11)](https://en.cppreference.com/w/cpp/types/integer)
+- [Fixed width floating-point types (since C++23)](https://en.cppreference.com/w/cpp/types/floating-point)
 - [P0330: Literal Suffix for (signed) size_t](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p0330r8.html)
 - [P1227: Signed ssize() functions, unsigned size() functions](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1227r2.html)
